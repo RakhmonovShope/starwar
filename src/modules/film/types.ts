@@ -7,6 +7,7 @@ export declare namespace IApi {
     export interface Params {
       page?: number;
       search?: string;
+      ids?: number[];
     }
   }
 

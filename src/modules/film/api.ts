@@ -15,6 +15,7 @@ export const List = ({
     params: {
       page: params.page ? params.page : 1,
       title: params.search ? params.search : undefined,
+      id__in: params.ids ? params.ids : undefined,
     },
   });
 
