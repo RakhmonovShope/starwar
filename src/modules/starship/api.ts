@@ -14,7 +14,7 @@ export const List = ({
   http.request.get(`${config.baseUrl}/starships`, {
     params: {
       page: params.page ? params.page : 1,
-      title: params.search ? params.search : undefined,
+      name: params.search ? params.search : undefined,
     },
   });
 
