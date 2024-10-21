@@ -1,0 +1,178 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-withPerPage {
+    @media (min-width: 576px) {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+
+.changer {
+  display: flex;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  &-onlyActive {
+    .itemBreak,
+    .item {
+      display: none;
+    }
+
+    .item:first-child,
+    .item:last-child,
+    .itemActive {
+      display: block;
+    }
+  }
+}
+
+.item {
+  display: block;
+
+  &Link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    margin: 0 4px;
+    color: var(--content-primary);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 140%;
+    background-color: var(--surface-z-4);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: none;
+    user-select: none;
+
+    &:hover {
+      color: var(--content-primary);
+    }
+  }
+
+  &Active {
+    display: block;
+
+    &Link {
+      color: var(--content-primary-alt);
+      background-color: var(--status-blue);
+
+      &:hover {
+        color: var(--content-primary-alt);
+      }
+    }
+  }
+
+  &Disabled {
+    .itemLink,
+    .itemIcon {
+      color: var(--content-secondary) !important;
+      cursor: not-allowed !important;
+    }
+  }
+
+  &Disabled.itemLink {
+    color: var(--content-secondary) !important;
+    cursor: not-allowed !important;
+  }
+
+  &Break {
+    cursor: pointer;
+
+    &Icon {
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+      color: var(--content-secondary);
+    }
+  }
+
+  &Icon {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    color: var(--content-primary);
+  }
+}
+
+.jump {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  white-space: nowrap;
+
+  &Input {
+    width: 40px;
+    height: 32px;
+    max-height: 32px;
+    margin: 0 8px;
+
+    input {
+      text-align: center;
+    }
+  }
+}
+
+.form {
+  label {
+    max-height: 32px;
+  }
+}
+
+.perPage {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  &Select {
+    width: 40px;
+
+    :global {
+      .ant-select-selector {
+        padding: 0 !important;
+      }
+
+      .ant-select-selection-search {
+        display: none !important;
+      }
+
+      .ant-select-selection-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
+    &Dropdown {
+      :global {
+        .ant-select-item {
+          height: 32px;
+          padding: 0;
+        }
+
+        .ant-select-item-option-content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
