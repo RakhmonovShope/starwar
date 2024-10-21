@@ -8,7 +8,7 @@ import * as CharacterModule from './modules/character';
 
 function App() {
   const [page, setPage] = useState(1);
-  const [characterId, setCharacterId] = useState<string>('');
+  const [characterId, setCharacterId] = useState<number>(0);
 
   const { items, meta } = useList({
     params: {
@@ -40,7 +40,7 @@ function App() {
       {!!characterId && (
         <CharacterGraph
           character={
-            items.find((item) => item.id === parseInt(characterId)) ||
+            items.find((item) => item.id === characterId) ||
             CharacterModule.Mappers.Person()
           }
         />
