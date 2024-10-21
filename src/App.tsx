@@ -1,16 +1,13 @@
-import '@xyflow/react/dist/style.css';
-// import { ReactFlow } from '@xyflow/react';
+import { useState } from 'react';
 import { useList } from './modules/character/hooks';
-import * as CharacterTypes from './modules/character/types';
-import classes from './App.module.scss';
 import Pagination from './components/Pagination';
 import Character from './components/Character';
-import { useState } from 'react';
+import CharacterGraph from './components/CharacterGraph';
+import classes from './App.module.scss';
 
 function App() {
-  const [selectedCharacter, setSelectedCharacter] =
-    useState<CharacterTypes.IEntity.Person | null>(null);
   const [page, setPage] = useState(1);
+  const [characterId, setCharacterId] = useState<string>('');
 
   const { items, meta } = useList({
     params: {
@@ -18,22 +15,32 @@ function App() {
     },
   });
 
-  console.log('selectedCharacter', selectedCharacter);
   return (
     <div className={classes.wrapper}>
-      {items.map((item) => (
-        <Character
-          key={`character-${item.id}`}
-          character={item}
-          onSelect={(item) => setSelectedCharacter(item)}
-        />
-      ))}
-
+      <div className={classes.header}>
+        <div className={classes.headerTitle}>Star</div>
+        <div className={classes.headerTitle}>Wars</div>
+      </div>
       <Pagination
         onChange={(page) => setPage(page)}
         current={page}
         total={meta.totalPages}
       />
+      <div className={classes.people}>
+        {items.map((item) => (
+          <Character
+            key={`character-${item.id}`}
+            {...item}
+            onSelect={(item) => setCharacterId(item)}
+          />
+        ))}
+      </div>
+
+      {!!characterId && (
+        <CharacterGraph
+          character={items.find((item) => item.id === parseInt(characterId))}
+        />
+      )}
     </div>
   );
 }

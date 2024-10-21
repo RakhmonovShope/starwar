@@ -1,4 +1,28 @@
 .wrapper {
+  padding: 20px;
+  background: url(http://www.script-tutorials.com/demos/360/images/stars.png)
+    top center #000;
+}
+
+.header {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+
+  &Title {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 60px;
+    color: #ffee58;
+  }
+}
+
+.people {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  grid-gap: 20px;
 }
