@@ -8,7 +8,7 @@ interface IProps {
   gender: string;
   height: string;
   mass: string;
-  onSelect: (id: string) => void;
+  onSelect: (id: number) => void;
 }
 
 const Character: React.FC<IProps> = ({

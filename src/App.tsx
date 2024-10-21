@@ -4,6 +4,7 @@ import Pagination from './components/Pagination';
 import Character from './components/Character';
 import CharacterGraph from './components/CharacterGraph';
 import classes from './App.module.scss';
+import * as CharacterModule from './modules/character';
 
 function App() {
   const [page, setPage] = useState(1);
@@ -38,7 +39,10 @@ function App() {
 
       {!!characterId && (
         <CharacterGraph
-          character={items.find((item) => item.id === parseInt(characterId))}
+          character={
+            items.find((item) => item.id === parseInt(characterId)) ||
+            CharacterModule.Mappers.Person()
+          }
         />
       )}
     </div>
