@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const useSingle = ({ id }: IProps) => {
-  const initialData = { item: Mappers.Person() } as Types.IQuery.Single;
+  const initialData = { item: Mappers.Film() } as Types.IQuery.Single;
 
   const { data = initialData, ...args } = useQuery<
     Types.IQuery.Single,
@@ -21,7 +21,7 @@ const useSingle = ({ id }: IProps) => {
     async () => {
       const { data } = await Api.Single({ id });
 
-      const item = Mappers.Person(data && data.data);
+      const item = Mappers.Film(data && data.data);
 
       return {
         item,

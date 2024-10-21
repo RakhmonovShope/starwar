@@ -24,7 +24,7 @@ const useList = () => {
       const { data } = await Api.List({ params: defaultParams });
 
       const items = (get(data, 'results') || []).map((item: any) =>
-        Mappers.Person(item),
+        Mappers.Film(item),
       );
 
       const meta = Mappers.Meta(data);

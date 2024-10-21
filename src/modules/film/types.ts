@@ -1,7 +1,7 @@
 export declare namespace IApi {
   export namespace List {
     export interface Response {
-      results: Person[];
+      results: Film[];
     }
 
     export interface Params {
@@ -12,34 +12,31 @@ export declare namespace IApi {
 
   export namespace Single {
     export interface Response {
-      data: Person;
+      data: Film;
     }
   }
 
-  export interface Person {
+  export interface Film {
     id: string;
   }
 }
 
 export declare namespace IEntity {
-  export interface Person {
-    birthYear: string;
+  export interface Film {
+    title: string;
+    episodeId: number;
+    openingCrawl: string;
+    director: string;
+    producer: string;
+    releaseDate: string;
+    species: string[];
+    starships: string[];
+    vehicles: string[];
+    characters: string[];
+    planets: string[];
+    url: string;
     created: string;
     edited: string;
-    eyeColor: string;
-    films: number[];
-    gender: string;
-    hairColor: string;
-    height: string;
-    homeworld: number;
-    id: number;
-    mass: string;
-    name: string;
-    skinColor: string;
-    species: number[];
-    starships: number[];
-    url: string;
-    vehicles: number[];
   }
 
   export interface Meta {
@@ -52,11 +49,11 @@ export declare namespace IEntity {
 
 export declare namespace IQuery {
   export interface List {
-    items: IEntity.Person[];
+    items: IEntity.Film[];
     meta: IEntity.Meta;
   }
 
   export interface Single {
-    item: IEntity.Person;
+    item: IEntity.Film;
   }
 }

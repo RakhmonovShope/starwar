@@ -11,10 +11,10 @@ export const List = ({
 }: {
   params: Types.IApi.List.Params;
 }): AxiosPromise<any> =>
-  http.request.get(`${config.baseUrl}/people`, {
+  http.request.get(`${config.baseUrl}/films`, {
     params: {
       page: params.page ? params.page : 1,
-      name: params.search ? params.search : undefined,
+      title: params.search ? params.search : undefined,
     },
   });
 
@@ -23,4 +23,4 @@ export const Single = ({
 }: {
   id: string;
 }): AxiosPromise<Types.IApi.Single.Response> =>
-  http.request.get(`${config.baseUrl}/people/${id}`);
+  http.request.get(`${config.baseUrl}/films/${id}`);
