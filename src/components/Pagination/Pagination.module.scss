@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 30px;
 
   &-withPerPage {
     @media (min-width: 576px) {
@@ -47,30 +49,26 @@
     min-width: 32px;
     height: 32px;
     margin: 0 4px;
-    color: var(--content-primary);
+    color: black;
     font-weight: 600;
     font-size: 12px;
     line-height: 140%;
-    background-color: var(--surface-z-4);
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 4px;
     cursor: pointer;
     transition: none;
     user-select: none;
-
-    &:hover {
-      color: var(--content-primary);
-    }
   }
 
   &Active {
     display: block;
 
     &Link {
-      color: var(--content-primary-alt);
-      background-color: var(--status-blue);
+      color: rgba(255, 255, 255, 0.9);
+      background-color: #5898f8;
 
       &:hover {
-        color: var(--content-primary-alt);
+        color: rgba(255, 255, 255, 0.9);
       }
     }
   }
@@ -78,13 +76,13 @@
   &Disabled {
     .itemLink,
     .itemIcon {
-      color: var(--content-secondary) !important;
+      color: rgba(255, 255, 255, 0.5) !important;
       cursor: not-allowed !important;
     }
   }
 
   &Disabled.itemLink {
-    color: var(--content-secondary) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
     cursor: not-allowed !important;
   }
 
@@ -95,7 +93,7 @@
       width: 16px;
       min-width: 16px;
       height: 16px;
-      color: var(--content-secondary);
+      color: rgba(255, 255, 255, 0.5);
     }
   }
 
@@ -103,73 +101,7 @@
     width: 16px;
     min-width: 16px;
     height: 16px;
-    color: var(--content-primary);
-  }
-}
-
-.jump {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  white-space: nowrap;
-
-  &Input {
-    width: 40px;
-    height: 32px;
-    max-height: 32px;
-    margin: 0 8px;
-
-    input {
-      text-align: center;
-    }
-  }
-}
-
-.form {
-  label {
-    max-height: 32px;
-  }
-}
-
-.perPage {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-
-  &Select {
-    width: 40px;
-
-    :global {
-      .ant-select-selector {
-        padding: 0 !important;
-      }
-
-      .ant-select-selection-search {
-        display: none !important;
-      }
-
-      .ant-select-selection-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-      }
-    }
-
-    &Dropdown {
-      :global {
-        .ant-select-item {
-          height: 32px;
-          padding: 0;
-        }
-
-        .ant-select-item-option-content {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
-    }
+    color: rgba(255, 255, 255, 0.9);
   }
 }
 
