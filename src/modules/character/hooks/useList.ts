@@ -6,12 +6,12 @@ import * as Mappers from '../mappers';
 import * as Types from '../types';
 import get from 'lodash/get';
 
-const useList = () => {
+const useList = ({ params }: { params: Types.IApi.List.Params }) => {
   const initialData = { items: [], meta: Mappers.Meta() } as Types.IQuery.List;
 
   const defaultParams = {
-    page: 1,
-    search: '',
+    page: params.page ? params.page : 1,
+    search: params.search ? params.search : '',
   };
 
   const { data = initialData, ...args } = useQuery<
